@@ -1,13 +1,9 @@
 <mat-sidenav-container class="h-full">
-  <mat-sidenav #sidenav mode="side" opened="true">
-    <div class="h-full bg-gray-200">
+  <mat-sidenav #sidenav mode="side" opened="true" style="width: 250px;">
       <mat-nav-list>
         <mat-list-item routerLink="/grid"> Dashboard </mat-list-item>
         <mat-list-item routerLink="/add-contato"> Adicionar Contato </mat-list-item>
-        <mat-list-item routerLink="/lista"> Listar Contatos </mat-list-item>
-        <mat-list-item routerLink="/"> Contato </mat-list-item>
       </mat-nav-list>
-    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="gap-1">
