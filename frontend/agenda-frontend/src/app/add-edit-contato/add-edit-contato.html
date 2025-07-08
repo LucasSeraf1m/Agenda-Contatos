@@ -1,0 +1,80 @@
+<mat-card class="flex items-center" style="background-color: white">
+  <mat-card-header>
+    <mat-card-title class="p-4">
+      {{ isModoEditar ? "Editar" : "Adicionar" }} Contato</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+          <mat-form-field class="w-64">
+            <mat-label> Nome </mat-label>
+            <input
+              matInput
+              formControlName="nome"
+              placeholder="Insira o nome"
+            />
+            <mat-error *ngIf="contatoForm.get('nome')?.hasError('required')">
+              Insira o nome do contato
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-64">
+            <mat-label> Telefone </mat-label>
+            <input
+              matInput
+              formControlName="telefone"
+              placeholder="Insira o telefone"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-64">
+            <mat-label> Data de nascimento </mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="dataNascimento"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-64">
+            <mat-label>Idade</mat-label>
+            <input matInput formControlName="idade" readonly />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-64">
+            <mat-label> E-mail </mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Insira o e-mail"
+            />
+            <mat-error *ngIf="contatoForm.get('email')?.hasError('email')">
+              Insira um e-mail válido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      class="w-64 mb-4"
+      matButton="tonal"
+      (click)="onSubmit()"
+      [disabled]="contatoForm.invalid"
+    >
+      Salvar
+    </button>
+  </mat-card-actions>
+</mat-card>
