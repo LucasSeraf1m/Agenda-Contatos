@@ -15,5 +15,7 @@ Este é um projeto simples de uma agenda de contatos
 3. Rodar o arquivo AgendaApplication.java
 
 ### Front-end
-1. Instalar dependências
-2. Executar ng s no terminal
+
+1. Abrir o projeto agenda-frontend localizado na pasta frontend
+2. Instalar dependências
+3. Executar ng s no terminal
