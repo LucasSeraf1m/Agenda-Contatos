@@ -10,6 +10,9 @@ CREATE TABLE `contato` (
   `idade` int DEFAULT NULL,
   `data_nascimento` DATE DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
+  `data_criacao` timestamp DEFAULT NULL,
+  `data_atualizacao` timestamp DEFAULT NULL,
+  `excluido` boolean DEFAULT NULL,
   PRIMARY KEY (`id_contato`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
